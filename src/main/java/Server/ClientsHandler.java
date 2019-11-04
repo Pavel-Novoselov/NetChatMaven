@@ -1,5 +1,7 @@
 package Server;
 
+import org.apache.log4j.Logger;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -18,6 +20,7 @@ public class ClientsHandler {
     private String nick;
     private List<String> blackList;
     private TreeSet<String> history = new TreeSet<>();
+    private static final Logger admin = Logger.getLogger("admin");
 
     public ClientsHandler(ServerChat serv, Socket socket) {
         try {
@@ -37,19 +40,25 @@ public class ClientsHandler {
                                     String[] regTokens = str.split(" ");
                                     AuthService.addNewUser(regTokens[1], regTokens[2], regTokens[3]);
                                     sendMsg("/regok");
+                                    admin.info("Новый клиент успешно зарегистрировался");
                                 }
                                 if (str.startsWith("/auth")) {
                                     String[] tokens = str.split(" ");
                                     String currentNick = AuthService.getNickByLoginAndPass(tokens[1], tokens[2]);
-                                    if (currentNick == null)
+                                    if (currentNick == null) {
                                         sendMsg("неверный логин/пароль");
-                                    else if (!serv.isNickUnic(currentNick))
+                                        admin.warn("неудачная попытка залогиниться - неверный логин/пароль");
+                                    }
+                                    else if (!serv.isNickUnic(currentNick)) {
                                         sendMsg("пользователь с таким логином уже существует");
+                                        admin.warn("неудачная попытка залогиниться - пользователь с таким логином уже существует");
+                                    }
                                     else {
                                         sendMsg("/authok");
                                         nick = currentNick;
                                         serv.subscribe(ClientsHandler.this);
                                         System.out.println("Auth "+nick+" is OK");
+                                        admin.info("Клиент "+ nick+" успешно залогинился");
                                         //загрузка черного списка
                                         ClientsHandler.this.blackList = AuthService.blackListFromDB (ClientsHandler.this);
                                         //загрузка истории
@@ -68,6 +77,7 @@ public class ClientsHandler {
                                     blackList.add(tokens[1]);
                                     AuthService.addToBlackList(getNick(), tokens[1]);
                                     sendMsg("You've added "+tokens[1]+" into Black List");
+                                    admin.info("Клиент "+ nick+" добавил в черный лист клиента "+tokens[1]);
                                 }
                                 if (str.equalsIgnoreCase("/end")) {
                                     sendMsg("/clientClose");
@@ -77,36 +87,46 @@ public class ClientsHandler {
                                      String[] tokens = str.split(" ", 3);
                                      serv.privatMsg(tokens[1], "Privat message from "+getNick()+": "+tokens[2]);
                                      serv.privatMsg(getNick(), "Private message to "+tokens[1]+": "+tokens[2]);
+                                     admin.info("Клиент "+ nick+" отправил приватное сообщение клиенту "+tokens[1]);
+
                                 }
                             } else
                                 serv.broadcastMsg(ClientsHandler.this, str);
+                                admin.info("Клиент "+ nick+" отправил сообщение в чат");
                         }
                     } catch (SQLException e) {
                         e.printStackTrace();
+                        admin.error(e.getMessage()+ "Ошибка программы");
                     } catch (IOException e){
                         e.printStackTrace();
+                        admin.error(e.getMessage()+ "Ошибка программы");
                     } finally {
                         try {
                             out.close();
                         } catch (IOException e) {
                             e.printStackTrace();
+                            admin.error(e.getMessage()+ "Ошибка программы");
                         }
                         try {
                             in.close();
                         } catch (IOException e) {
                             e.printStackTrace();
+                            admin.error(e.getMessage()+ "Ошибка программы");
                         }
                         try {
                             socket.close();
                         } catch (IOException e) {
                             e.printStackTrace();
+                            admin.error(e.getMessage()+ "Ошибка программы");
                         }
                         serv.unsubscribe(ClientsHandler.this);
+                        admin.info("Клиент "+nick+" вышел из чата");
                     }
                 }
             }).start();
         } catch (IOException e){
             e.printStackTrace();
+            admin.error(e.getMessage()+ "Ошибка программы");
         }
     }
 
@@ -115,6 +135,7 @@ public class ClientsHandler {
             out.writeUTF(msg);
         } catch (IOException e){
             e.printStackTrace();
+            admin.error(e.getMessage()+ "Ошибка программы");
         }
     }
 //перегружаем метод на отправку списка
@@ -125,23 +146,12 @@ public class ClientsHandler {
                  msg) {
                 out.writeUTF(s);
             }
-            out.writeUTF("-------------------------");
+            out.writeUTF("-----------------------___--");
         } catch (IOException e){
             e.printStackTrace();
+            admin.error(e.getMessage()+ "Ошибка программы");
         }
     }
-
-    //очиста истории от сообщений из черного списка - не успел доделать, выдает ошибку в стр 138-139 и не хочет логинить новых пользователей!
-//    public void cleanHistory(){
-//        for (String nickBlack:
-//             blackList) {
-//            for (String s:
-//                 history) {
-//                if(s.contains(nickBlack))
-//                    history.remove(s);
-//            }
-//        }
-//    }
 
     public String getNick() {
         return nick;

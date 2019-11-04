@@ -1,5 +1,7 @@
 package Server;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,6 +11,7 @@ import java.util.Vector;
 
 public class ServerChat {
     private Vector<ClientsHandler> clients;
+    private static final Logger admin = Logger.getLogger("admin");
 
     public ServerChat() throws SQLException {
         clients=new Vector<>();
@@ -19,23 +22,30 @@ public class ServerChat {
             AuthService.connect();
             server = new ServerSocket(8189);
             System.out.println("Server started");
+            admin.info("Server started");
             while (true){
                 socket = server.accept();
                 System.out.println("Client connected");
                 new ClientsHandler(this, socket);
+                admin.info("New client connected");
             }
         } catch (IOException e){
             e.printStackTrace();
+            admin.error(e.getMessage());
         } finally {
             try {
                 socket.close();
+                admin.info("Соединение с клиентом закрыто");
             } catch (IOException e){
                 e.printStackTrace();
+                admin.error(e.getMessage());
             }
             try {
                 server.close();
+                admin.info("Сервер завершил работу");
             } catch (IOException e) {
                 e.printStackTrace();
+                admin.error(e.getMessage());
             }
             AuthService.disconnect();
         }
