@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="NetChatFx" />
+      <artifact name="NetChatMaven:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e5a4411-46e0-43ce-8f28-448df63b583f" name="Default Changelist" comment="" />
+    <list default="true" id="3e5a4411-46e0-43ce-8f28-448df63b583f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/NetChatMaven.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server/ClientsHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ClientsHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server/ClientsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ClientsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server/ServerChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ServerChat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Server/ServerStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ServerStart.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -16,24 +42,32 @@
     </option>
   </component>
   <component name="ProjectId" id="1T9eGl5VdIBBQmb0JIDxLKx0cAp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="settings.editor.splitter.proportion" value="0.23911323" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dropbox\Projects\NetChatMaven\src\main\resources\fxml" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Dropbox\Projects\NetChatMaven\src\main\resources" />
       <recent name="D:\Dropbox\Projects\NetChatMaven" />
       <recent name="D:\Dropbox\Projects\NetChatMaven\src\main\java\Server" />
       <recent name="D:\Dropbox\Projects\NetChatMaven\src\main\java\Client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dropbox\Projects\NetChatMaven\src\main\resources\fxml" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -48,8 +82,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JAR Application.NetChatMaven.jar (2)">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.Main" />
       <module name="NetChatMaven" />
       <extension name="coverage">
@@ -75,14 +109,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ArrMasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NetChatMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ArrMasTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NetChatMaven.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/NetChatMaven/NetChatMaven.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NetChatMaven.jar (2)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/NetChatFx/NetChatMaven.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NetChatMaven.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/NetChatMaven_jar/NetChatMaven.jar" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.ServerStart" />
+      <item itemvalue="JAR Application.NetChatMaven.jar" />
+      <item itemvalue="JAR Application.NetChatMaven.jar (1)" />
+      <item itemvalue="JAR Application.NetChatMaven.jar (2)" />
+      <item itemvalue="JUnit.ArrMasTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.NetChatMaven.jar (2)" />
+        <item itemvalue="JAR Application.NetChatMaven.jar" />
         <item itemvalue="Application.ServerStart" />
+        <item itemvalue="JAR Application.NetChatMaven.jar (1)" />
+        <item itemvalue="JUnit.ArrMasTest" />
       </list>
     </recent_temporary>
   </component>
@@ -97,10 +159,50 @@
       <option name="presentableId" value="Default" />
       <updated>1572876644696</updated>
       <workItem from="1572876648100" duration="4385000" />
+      <workItem from="1572884725676" duration="12477000" />
+      <workItem from="1573225990576" duration="1003000" />
+      <workItem from="1573424749236" duration="2045000" />
+      <workItem from="1573490234170" duration="1302000" />
+      <workItem from="1573499148023" duration="5011000" />
+      <workItem from="1573551095018" duration="604000" />
+      <workItem from="1573555131833" duration="20000" />
+      <workItem from="1573555509044" duration="550000" />
+      <workItem from="1573589873645" duration="588000" />
+      <workItem from="1573676577412" duration="270000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
