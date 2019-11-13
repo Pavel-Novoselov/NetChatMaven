@@ -8,14 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e5a4411-46e0-43ce-8f28-448df63b583f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log4j.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NetChatMaven.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log4jAdmin.log" beforeDir="false" afterPath="$PROJECT_DIR$/log4jAdmin.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/mainDB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/sample.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Server/ClientsHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ClientsHandler$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Server/ClientsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ClientsHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Server/ServerChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Server/ServerChat.class" afterDir="false" />
@@ -175,6 +168,7 @@
       <workItem from="1573555131833" duration="20000" />
       <workItem from="1573555509044" duration="550000" />
       <workItem from="1573589873645" duration="588000" />
+      <workItem from="1573676577412" duration="270000" />
     </task>
     <servers />
   </component>
