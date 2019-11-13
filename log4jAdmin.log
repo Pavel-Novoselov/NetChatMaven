@@ -10,3 +10,11 @@
 2019-11-04 20:37:36 INFO   admin:ClientsHandler.java:95 - Клиент n отправил сообщение в чат
 2019-11-04 20:37:41 INFO   admin:ClientsHandler.java:123 - Клиент n вышел из чата
 2019-11-04 20:37:45 INFO   admin:ClientsHandler.java:123 - Клиент n1 вышел из чата
+2019-11-08 18:15:16 INFO   admin:ServerChat.java:25 - Server started
+2019-11-08 18:15:51 INFO   admin:ServerChat.java:30 - New client connected
+2019-11-08 18:15:51 INFO   admin:ClientsHandler.java:61 - Клиент n успешно залогинился
+2019-11-08 18:17:12 INFO   admin:ServerChat.java:30 - New client connected
+2019-11-08 18:17:12 INFO   admin:ClientsHandler.java:61 - Клиент n1 успешно залогинился
+2019-11-08 18:17:18 INFO   admin:ClientsHandler.java:95 - Клиент n1 отправил сообщение в чат
+2019-11-08 18:17:22 INFO   admin:ClientsHandler.java:95 - Клиент n отправил сообщение в чат
+2019-11-13 23:23:43 INFO   admin:ServerChat.java:25 - Server started
